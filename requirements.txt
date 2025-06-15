@@ -1,5 +1,7 @@
-
+streamlit
 pandas
 scikit-learn
-imblearn
+imbalanced-learn
 joblib
+matplotlib
+seaborn
