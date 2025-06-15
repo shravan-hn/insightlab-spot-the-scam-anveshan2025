@@ -16,7 +16,7 @@ ENV/
 .ipynb_checkpoints
 
 # Model files
-*.pkl
+# *.pkl
 *.joblib
 
 # Streamlit cache
