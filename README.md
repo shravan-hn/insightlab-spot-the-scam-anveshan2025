@@ -1,69 +1,78 @@
-# 🚀 Spot The Scam — Fraudulent Job Posting Detection
+# Spot The Scam — Fraudulent Job Posting Detection
 
-## Overview
+## 🧠 Overview
 
-Detect fake job postings and protect users before they apply.
+Detect fake job postings and protect users **before** they apply.  
+Our solution uses Machine Learning to scan uploaded job listings and flag potential scams — fast, accurate, and fully automated.
 
-## Problem Statement
+---
 
-Online job platforms are increasingly targeted by scammers. These fake job listings waste applicant time and expose them to financial loss or data theft.
-Our solution uses Machine Learning to automatically detect potentially fraudulent job postings from CSV input files.
+## 🎯 Problem Statement
 
-## Solution Approach
+Online job platforms are increasingly targeted by scammers. These fake job listings waste applicant time and expose users to **data theft** and **financial loss**.
 
-- Binary classification (fraudulent vs genuine)
-- Text cleaning, feature extraction, and model training
-- Model trained using Logistic Regression and TF-IDF vectorization
-- Focus on high F1-score (imbalanced data)
+Our solution automatically detects potentially fraudulent job postings from any CSV input file using a trained machine learning model.
 
-## Key Features
+---
 
-- Accepts any CSV file (any name)
-- Fully automated preprocessing pipeline
-- Predicts fraud probability for each job
-- Generates CSV output with predictions
-- Supports further dashboard visualization
-- Code fully modular for easy retraining
-- Can be extended with email alerts & SHAP explainability
+## 🛠️ Solution Approach
 
-## Dataset
+- Binary classification: **Fraudulent** vs **Genuine**
+- Text preprocessing and feature extraction using **TF-IDF**
+- Model trained using **Logistic Regression** with class weighting
+- Targeted for **high F1-score** (due to class imbalance)
 
-- Kaggle-style job dataset with fields like: title, company_profile, description, requirements, benefits, employment_type, etc.
-- Highly imbalanced: ~5% fraudulent
+---
 
-## Technologies Used
+## ✨ Key Features
 
-- Python 3.12+
-- pandas
-- scikit-learn
-- joblib
-- re (regex)
-- (optionally: smtplib for email alert)
+- ✅ Accepts any uploaded CSV (any file name)
+- ⚙️ Fully automated preprocessing & prediction
+- 📊 Outputs fraud **probabilities per row**
+- 📁 Saves results into new CSV file
+- 📈 Integrated Streamlit dashboard for insights
+- 🔁 Modular pipeline for easy retraining or extension
+- 📧 Email alert for high-risk jobs (optional)
+- 🔍 Future-ready: supports SHAP explainability
 
-## Folder Structure
+---
+
+## 📂 Folder Structure
 
 ```
+
 spot-the-scam-ml/
 ├── preprocessing.py
-├── train_model.py
-├── predict_csv.py
-├── email_alert.py  (optional)
+├── train\_model.py
+├── predict\_csv.py
+├── email\_alert.py         # (optional)
 ├── model/
 │   ├── vectorizer.pkl
-│   └── fraud_detector.pkl
+│   └── fraud\_detector.pkl
 ├── data/
 │   └── (your CSV files go here)
+├── app.py                 # Streamlit Dashboard
 ├── requirements.txt
 └── README.md
-```
 
-## How to Run
+````
 
-1️⃣ Install dependencies
+---
 
+## 🧪 Dataset
+
+- Based on Kaggle-style job listings dataset
+- Fields include: `title`, `company_profile`, `description`, `requirements`, `benefits`, etc.
+- **Imbalanced** dataset with ~5% fraudulent jobs
+
+---
+
+## ⚙️ How to Run Locally
+
+1️⃣ Install dependencies  
 ```bash
 pip install -r requirements.txt
-```
+````
 
 2️⃣ Train the model
 
@@ -71,34 +80,51 @@ pip install -r requirements.txt
 python train_model.py
 ```
 
-3️⃣ Predict on new CSV file
+3️⃣ Predict on a new CSV file
 
 ```bash
-python predict_csv.py your_file.csv your_output.csv
+python predict_csv.py your_input.csv your_output.csv
 ```
 
-## Current F1 Score
+4️⃣ Launch the dashboard
 
-F1-score: ~0.82  
-Model is designed for maximum generalization on unseen data.
+```bash
+streamlit run app.py
+```
 
-## Optional: Email Alert Feature
+---
 
-If enabled, after prediction it can email high-risk job listings automatically.
+## 📈 Model Performance
 
-## Note
+* **F1-Score**: \~0.82
+* Optimized for class imbalance and real-world generalization
 
-- Email alert uses Google App Password or SMTP provider
-- Fully GDPR-safe as no user data is stored
+---
 
-## Team
+## 🔔 Optional: Email Alert Feature
 
-- ML: Ved Sojitra
-- Frontend: Saravana Ganesh
-- Dashboard: Shravan H N
+* Automatically emails high-risk job listings after prediction
+* Uses Gmail App Password or SMTP setup (configurable)
 
-## Submission Links
+---
 
-- Video Demo:
+## 🚀 Live App Demo
 
-## Thank you!
+* YouTube Walkthrough: [📺 Watch here](https://youtu.be/iGOTGmxwQYM)
+
+---
+
+## 👨‍💻 Team
+
+* 🤖  **Ved Sojitra**
+* 🌐  **Saravana Ganesh**
+* 📊  **Shravan H N**
+
+---
+
+## Thank You!
+
+This system helps job platforms **stop fraud at the source** — protecting users and improving trust.
+
+---
+
